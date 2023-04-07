@@ -1,50 +1,36 @@
+#include "main.h"
+
 /**
- * _sqrt_recursion - Calculates the natural square root of a number.
+ * _sqrt_recursion - Calculates the natural square root of a number
+ * @n: Number to calculate the square root of
  *
- * @n: The number to calculate the square root of.
- *
- * Return: The natural square root of n, or -1 if n does not have one.
+ * Return: The natural square root of n, or -1 if n does not have a natural
+ * square root.
  */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)
-	{
 		return (-1);
-	}
-	else if (n == 0)
-	{
-		return (0);
-	}
-	else if (n == 1)
-	{
-		return (1);
-	}
-	else
-	{
-		return (sqrt_check(n, 1));
-	}
+	if (n == 0 || n == 1)
+		return (n);
+
+	return (sqrt_recursive(n, 1));
 }
 
 /**
- * sqrt_check - Recursively checks for the square root of a number.
+ * sqrt_recursive - Recursively calculates the natural square root of a number
+ * @n: Number to calculate the square root of
+ * @i: Possible square root value
  *
- * @n: The number to check.
- * @i: The integer to check as a possible square root of n.
- *
- * Return: The square root of n, or -1 if n does not have one.
+ * Return: The natural square root of n, or -1 if n does not have a natural
+ * square root.
  */
-int sqrt_check(int n, int i)
+int sqrt_recursive(int n, int i)
 {
-	if (i * i > n)
-	{
-		return (-1);
-	}
-	else if (i * i == n)
-	{
+	if (i * i == n)
 		return (i);
-	}
-	else
-	{
-		return (sqrt_check(n, i + 1));
-	}
+	if (i * i > n)
+		return (-1);
+
+	return (sqrt_recursive(n, i + 1));
 }

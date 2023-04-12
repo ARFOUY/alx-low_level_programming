@@ -1,6 +1,10 @@
 #include <stdlib.h>
 #include <string.h>
-
+/**
+* _strdup - duplicate to new memory space location
+* @str: char
+* Return: 0
+*/
 char *_strdup(char *str)
 {
 char *newstr;

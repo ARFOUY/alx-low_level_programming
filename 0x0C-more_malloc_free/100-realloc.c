@@ -11,40 +11,40 @@
  */
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	char *mim1;
-	char *old_mim;
+	char *ptr1;
+	char *old_ptr;
 	unsigned int i;
 
 	if (new_size == old_size)
-		return (mim);
+		return (ptr);
 
-	if (new_size == 0 && mim)
+	if (new_size == 0 && ptr)
 	{
-		free(mim);
+		free(ptr);
 		return (NULL);
 	}
 
-	if (!mim)
+	if (!ptr)
 		return (malloc(new_size));
 
-	mim1 = malloc(new_size);
-	if (!mim1)
+	ptr1 = malloc(new_size);
+	if (!ptr1)
 		return (NULL);
 
-	old_mim = mim;
+	old_ptr = ptr;
 
 	if (new_size < old_size)
 	{
 		for (i = 0; i < new_size; i++)
-		mim1[i] = old_mim[i];
+			ptr1[i] = old_ptr[i];
 	}
 
 	if (new_size > old_size)
 	{
 		for (i = 0; i < old_size; i++)
-			mim1[i] = old_mim[i];
+			ptr1[i] = old_ptr[i];
 	}
 
-	free(mim);
-	return (mim1);
-}
+	free(ptr);
+	return (ptr1);
+}	

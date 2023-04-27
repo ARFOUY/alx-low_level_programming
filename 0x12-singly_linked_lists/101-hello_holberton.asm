@@ -1,11 +1,9 @@
-#include <stdio.h>
-
-void main(void)
-{
-    __asm__("mov $message, %rdi;"
-            "xor %rax, %rax;"
-            "call printf;"
-            "mov $0, %eax;"
-            "ret;"
-            "message: .asciz \"Hello, Holberton\\n\";");
-}
+ global    main
+          extern    printf
+main:
+	  mov   edi, format
+	  xor   eax, eax
+	  call  printf
+	  mov 	eax, 0
+	  ret
+format: db `Hello, Holberton\n`,0

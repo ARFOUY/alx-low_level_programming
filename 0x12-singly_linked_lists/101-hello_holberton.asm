@@ -1,9 +1,13 @@
- global    main
-          extern    printf
-main:
-	  mov   edi, format
-	  xor   eax, eax
-	  call  printf
-	  mov 	eax, 0
-	  ret
-format: db `Hello, Holberton\n`,0
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+int main(void)
+{
+    printf("Hello, Holberton\n");
+    return (0);
+}
+

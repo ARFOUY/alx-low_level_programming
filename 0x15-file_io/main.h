@@ -10,7 +10,8 @@ Pour respecter la structure du code, on peut réécrire le code de la manière s
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
-
+#include <stdio.h>
+#include <stdlib.h>
 // prototype de la fonction read_textfile
 ssize_t read_textfile(const char *filename, size_t letters);
 
